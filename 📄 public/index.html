@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0d6efd" />
+  <meta name="description" content="Adoção responsável de cães e gatos. Encontre seu novo melhor amigo!" />
+  
+  <!-- PWA Meta Tags -->
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/icons/icon-192x192.png" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  
+  <!-- SEO -->
+  <meta name="author" content="PetAdopt" />
+  <meta name="keywords" content="adoção, pets, cachorros, gatos, animais, ong" />
+  
+  <title>PetAdopt - Adoção Responsável</title>
+</head>
+<body>
+  <noscript>Você precisa habilitar JavaScript para executar este app.</noscript>
+  <div id="root"></div>
+  
+  <!-- Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('%PUBLIC_URL%/sw.js')
+          .then((registration) => {
+            console.log('SW registrado:', registration);
+          })
+          .catch((error) => {
+            console.log('Erro ao registrar SW:', error);
+          });
+      });
+    }
+  </script>
+</body>
+</html>
